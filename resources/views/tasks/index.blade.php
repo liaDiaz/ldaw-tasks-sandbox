@@ -8,9 +8,8 @@
 </div>
 <div class="row">
     <div class="col-12">
-        <a class="btn btn-default" href="{{ route('tasks.create') }}">
-            Crea una tarea
-        </a>
+        <input type="text" name="description">
+        <input type="button" value="Crear" onclick="createTask();">
     </div>
 </div>
 <div class="row">
@@ -32,9 +31,9 @@
                     <td>
                         {{ $task->description }}
                     </td>
-                    <th>
+                    <td>
                         {{ $task->is_done ? 'No' : 'Sí' }}
-                    </th>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>
@@ -43,3 +42,10 @@
 </div>
 @endsection
 
+@push('layout_end_body')
+<script>
+    function createTask() {
+        console.log("Crea la tarea");
+    }
+</script>
+@endpush
