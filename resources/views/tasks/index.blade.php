@@ -13,5 +13,33 @@
         </a>
     </div>
 </div>
+<div class="row">
+    <div class="col-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Descripción</th>
+                    <th>¿Pendiente?</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($tasks as $task)
+                <tr>
+                    <td>
+                        {{ $task->id }}
+                    </td>
+                    <td>
+                        {{ $task->description }}
+                    </td>
+                    <th>
+                        {{ $task->is_done ? 'No' : 'Sí' }}
+                    </th>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+</div>
 @endsection
 
