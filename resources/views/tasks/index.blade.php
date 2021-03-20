@@ -58,7 +58,12 @@
             }
         })
         .done(function(response) {
-            console.log('Éxitoso', response);
+            $('#description').val('');
+
+            $('.table tbody').append('<tr><td>1</td><td>prueba</td></tr>');
+
+            console.log(response.id);
+            console.log(response.description);
         })
         .fail(function(jqXHR, response) {
             console.log('Fallido', response);
